@@ -21,6 +21,15 @@ docker run -d \
   -p 11434:11434 \
   -e OLLAMA_HOST=$OLLAMA_HOST \
   -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
+  $image >/dev/null || docker rm -f ollama && \
+  docker run -d \
+  --name ollama \
+  --network agents \
+  --restart always \
+  -v ollama:/root/.ollama \
+  -p 11434:11434 \
+  -e OLLAMA_HOST=$OLLAMA_HOST \
+  -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
   $image >/dev/null
 
 docker exec ollama ollama pull gemma4:12b 
