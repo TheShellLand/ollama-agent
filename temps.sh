@@ -3,6 +3,8 @@
 
 while true; do
   clear
+  free -h 
+  echo ---
   sensors
   echo ---
   nvidia-smi
