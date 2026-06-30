@@ -4,6 +4,7 @@
 image="ollama/ollama"
 OLLAMA_CONTEXT_LENGTH=256000
 OLLAMA_HOST="0.0.0.0"
+GPU="None"
 
 set -xe
 
@@ -21,16 +22,20 @@ docker run -d \
   -p 11434:11434 \
   -e OLLAMA_HOST=$OLLAMA_HOST \
   -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
-  $image >/dev/null || docker rm -f ollama && \
-  docker run -d \
-  --name ollama \
-  --network agents \
-  --restart always \
-  -v ollama:/root/.ollama \
-  -p 11434:11434 \
-  -e OLLAMA_HOST=$OLLAMA_HOST \
-  -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
-  $image >/dev/null
+  $image >/dev/null || GPU="false"
+
+if [[ $GPU == "false" ]]; then
+  docker rm -f ollama && \
+    docker run -d \
+    --name ollama \
+    --network agents \
+    --restart always \
+    -v ollama:/root/.ollama \
+    -p 11434:11434 \
+    -e OLLAMA_HOST=$OLLAMA_HOST \
+    -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
+    $image >/dev/null
+fi 
 
 docker exec ollama ollama pull gemma4:12b 
 
