@@ -3,5 +3,5 @@
 
 set -xe
 
-docker logs ollama
+docker logs -f ollama
 
