@@ -4,11 +4,11 @@
 while true; do
   free -h 
   echo ---
-  sleep 1
+  sleep 3
   sensors
   echo ---
-  sleep 1
+  sleep 3
   nvidia-smi
   echo ---
-  sleep 1
+  sleep 3
 done
