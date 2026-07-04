@@ -2,12 +2,13 @@
 # temperature sensors
 
 while true; do
-  clear
   free -h 
   echo ---
+  sleep 1
   sensors
   echo ---
+  sleep 1
   nvidia-smi
   echo ---
-  sleep 5
+  sleep 1
 done
