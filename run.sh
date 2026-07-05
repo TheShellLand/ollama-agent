@@ -44,7 +44,7 @@ fi
 
 docker exec ollama ollama pull gemma4:12b 
 #docker exec ollama ollama pull deepseek-r1:14b
-docker exec ollama ollama pull qwen2.5:14b
+#docker exec ollama ollama pull qwen2.5:14b
 
 docker ps | grep ollama
 echo
