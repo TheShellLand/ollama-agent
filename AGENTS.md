@@ -2,5 +2,5 @@
 
 # TASKS
 
-- read all git changes and commit changes
+- read all git changes and commit changes with a descriptive message
 
