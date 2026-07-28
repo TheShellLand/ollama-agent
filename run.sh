@@ -42,8 +42,8 @@ if [[ $GPU == "false" ]]; then
     $image >/dev/null
 fi 
 
-#docker exec ollama ollama pull gemma4:12b 
 docker exec ollama ollama pull igorls/gemma-4-12B-it-heretic-GGUF
+#docker exec ollama ollama pull gemma4:12b 
 #docker exec ollama ollama pull deepseek-r1:14b
 #docker exec ollama ollama pull qwen2.5:14b
 
