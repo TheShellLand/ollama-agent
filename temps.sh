@@ -11,4 +11,7 @@ while true; do
   nvidia-smi
   echo ---
   sleep 3
+  docker exec ollama ollama ps
+  echo ---
+
 done
