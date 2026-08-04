@@ -17,7 +17,7 @@ set -xe
 cat run.sh
 
 docker network create agents >/dev/null 2>&1 || :
-docker rm -f ollama >/dev/null || :
+docker rm -f $container >/dev/null || :
 
 docker run -d \
   --name $container \
