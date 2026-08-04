@@ -1,7 +1,8 @@
 #!/bin/bash 
 # run ollama in docker
 
-image="ollama/ollama"
+image="ollama-agent"
+container="ollama-agent"
 OLLAMA_CONTEXT_LENGTH_DEEPSEEK=131072
 OLLAMA_CONTEXT_LENGTH_DEEPSEEK_5070fe=20000
 OLLAMA_CONTEXT_LENGTH_GEMMA=262144
@@ -19,7 +20,7 @@ docker network create agents >/dev/null 2>&1 || :
 docker rm -f ollama >/dev/null || :
 
 docker run -d \
-  --name ollama \
+  --name $container \
   --network agents \
   --restart always \
   --gpus=all \
@@ -32,7 +33,7 @@ docker run -d \
 if [[ $GPU == "false" ]]; then
   docker rm -f ollama && \
     docker run -d \
-    --name ollama \
+    --name $container \
     --network agents \
     --restart always \
     -v ollama:/root/.ollama \
@@ -42,10 +43,10 @@ if [[ $GPU == "false" ]]; then
     $image >/dev/null
 fi 
 
-docker exec ollama ollama pull igorls/gemma-4-12B-it-heretic-GGUF
-#docker exec ollama ollama pull gemma4:12b 
-#docker exec ollama ollama pull deepseek-r1:14b
-#docker exec ollama ollama pull qwen2.5:14b
+ docker exec $container ollama pull igorls/gemma-4-12B-it-heretic-GGUF
+#docker exec $container ollama pull gemma4:12b 
+#docker exec $container ollama pull deepseek-r1:14b
+#docker exec $container ollama pull qwen2.5:14b
 
 docker ps | grep ollama
 echo
