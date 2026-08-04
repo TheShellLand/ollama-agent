@@ -50,4 +50,5 @@ fi
 
 docker ps | grep ollama
 echo
-docker logs ollama
+docker logs $container
+
