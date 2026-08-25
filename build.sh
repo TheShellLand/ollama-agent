@@ -3,6 +3,7 @@
 
 image="ollama-agent"
 
+cd "$(dirname $0)"
 set -xe
 
 docker pull ollama/ollama
