@@ -1,15 +1,17 @@
 #!/bin/bash 
 # run ollama in docker
 
+container="ollama-agent"
+
 set -xe
 
-docker logs ollama
+docker logs $container
 echo
-docker ps | grep ollama
+docker ps | grep $container
 echo
-docker exec -it ollama ollama list
+docker exec -it $container ollama list
 echo
-docker exec -it ollama ollama ps
+docker exec -it $container ollama ps
 echo
-docker exec -it ollama bash
+docker exec -it $container bash
 
