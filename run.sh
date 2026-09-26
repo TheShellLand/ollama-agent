@@ -44,7 +44,10 @@ if [[ $GPU == "false" ]]; then
     $image >/dev/null
 fi 
 
- docker exec $container ollama pull igorls/gemma-4-12B-it-heretic-GGUF
+# it sometimes takes a few seconds for ollama to start up
+sleep 5
+
+docker exec $container ollama pull igorls/gemma-4-12B-it-heretic-GGUF
 #docker exec $container ollama pull gemma4:12b 
 #docker exec $container ollama pull deepseek-r1:14b
 #docker exec $container ollama pull qwen2.5:14b
