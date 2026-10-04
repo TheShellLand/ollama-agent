@@ -1,0 +1,6 @@
+FROM igorls/gemma-4-12B-it-heretic-GGUF
+
+PARAMETER temperature 1.0
+PARAMETER frequency_penalty 1.0
+PARAMETER presence_penalty 1.0
+

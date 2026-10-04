@@ -19,3 +19,6 @@ RUN export NVIDIA_CONTAINER_TOOLKIT_VERSION=1.19.1-1 ; apt update; apt install -
       nvidia-container-toolkit-base=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
       libnvidia-container-tools=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
       libnvidia-container1=${NVIDIA_CONTAINER_TOOLKIT_VERSION}
+
+COPY Modelfile /
+
