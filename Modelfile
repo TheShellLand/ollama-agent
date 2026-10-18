@@ -2,7 +2,7 @@ FROM igorls/gemma-4-12B-it-heretic-GGUF
 
 PARAMETER temperature 0
 PARAMETER frequency_penalty 0.8
-PARAMETER repeat_penalty 0.8
+PARAMETER repeat_penalty 1.1
 PARAMETER repeat_last_n 64
 
 SYSTEM Ensure strict adherence to literal strings. Do not substitute hyphens (-) with underscores (_) or any other characters during interpretation, especially in file paths and identifiers. Use exactly what is provided in quotes.
