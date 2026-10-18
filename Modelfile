@@ -5,3 +5,6 @@ PARAMETER frequency_penalty 1.0
 PARAMETER repeat_penalty 1.1
 PARAMETER repeat_last_n 64
 
+SYSTEM
+Ensure strict adherence to literal strings. Do not substitute hyphens (-) with underscores (_) or any other characters during interpretation, especially in file paths and identifiers. Use exactly what is provided in quotes.diff --git a/Modelfile b/Modelfile
+
