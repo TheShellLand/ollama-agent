@@ -1,4 +1,5 @@
-FROM igorls/gemma-4-12B-it-heretic-GGUF
+#FROM igorls/gemma-4-12B-it-heretic-GGUF
+FROM gemma4:12b
 
 PARAMETER temperature 0.3
 PARAMETER top_p 0.85
