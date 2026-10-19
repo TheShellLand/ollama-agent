@@ -5,6 +5,11 @@ PARAMETER top_p 0.85
 PARAMETER repeat_penalty 1.2
 PARAMETER repeat_last_n 128
 
+PARAMETER stop "<thought>"
+PARAMETER stop "</thought>"
+PARAMETER stop "<think>"
+PARAMETER stop "</think>"
+
 SYSTEM """
 Provide direct, concise, and structured answers immediately.
 Do not deliberate out loud, self-correct recursively, or output phrases like 'Wait', 'No wait', or 'Let me rethink'. Answer the prompt directly.
