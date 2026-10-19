@@ -1,6 +1,10 @@
 # AGENTS.md
 
-# TASKS
+## Git Commit Rules
+Use the template below for all commit messages:
+```
+Write a descriptive single line message. 
 
-- read all git changes and commit changes with a descriptive message
+Write a paragraph summary of changes.
+```
 
