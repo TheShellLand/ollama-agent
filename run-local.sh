@@ -3,6 +3,6 @@
 cd "$(dirname $0)"
 set -xe 
 
-ollama create igorls/gemma-4-12B-it-heretic-GGUF -f Modelfile
+ollama create local -f Modelfile
 ollama list
 
