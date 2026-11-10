@@ -22,5 +22,5 @@ RUN \
       libnvidia-container-tools=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
       libnvidia-container1=${NVIDIA_CONTAINER_TOOLKIT_VERSION}
 
-COPY Modelfile /
+COPY Modelfile* /
 
