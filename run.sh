@@ -55,7 +55,7 @@ sleep 5
 #docker exec $container ollama pull qwen2.5:14b
 
 #docker exec $container ollama create igorls/gemma-4-12B-it-heretic-GGUF -f /Modelfile
-docker exec $container ollama create local -f /Modelfile
+docker exec $container ollama create gemma4:12b -f /Modelfile-gemma4:12b
 docker exec $container ollama list
 
 docker ps | grep ollama

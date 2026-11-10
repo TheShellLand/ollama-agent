@@ -3,6 +3,6 @@
 cd "$(dirname $0)"
 set -xe 
 
-ollama create local -f Modelfile
+ollama create gemma4:12b -f Modelfile-gemam4:12b
 ollama list
 
