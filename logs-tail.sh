@@ -1,5 +1,5 @@
 #!/bin/bash 
-# run ollama in docker
+# show ollama logs
 
 set -xe
 
